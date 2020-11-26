@@ -1,0 +1,14 @@
+
+$background-normal: linear-gradient(180deg,#b8f1ed 0%,#d9b8f1 50%,#f1b8e4 100%);
+
+$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+sans-serif;
+
+$font-code-stack: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+monospace;
+
+%Link_style {
+    color: black;
+    text-decoration: none;
+}

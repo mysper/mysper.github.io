@@ -1,0 +1,15 @@
+footer {
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    span {
+        margin-right: 10px;
+        float: right;
+        width: 50%;
+        text-align: right;
+        font-size: 12px;
+        &:after {
+            clear: right;
+        }
+    }
+}

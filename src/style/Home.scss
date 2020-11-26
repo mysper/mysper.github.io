@@ -1,0 +1,46 @@
+@import './value.scss';
+
+a {
+    @extend %Link_style;
+}
+
+main {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    .center {
+        position: absolute;
+        border: 2px black solid;
+        width: 400px;
+	    height: 500px;
+	    margin: auto;
+	    top:0;
+        right:0;
+        bottom:5%;
+        left:0;
+    }
+    .title {
+        text-align: center;
+        margin: 35px auto 30px;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .link_list {
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        font-family: monospace;
+        .link {
+            text-align: center;
+            margin: 11px auto;
+            &:hover {
+                &:before {
+                    content: "- ";
+                }
+                &:after {
+                    content: " -";
+                }
+            }
+        }
+    }
+}
