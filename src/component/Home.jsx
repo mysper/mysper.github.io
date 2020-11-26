@@ -15,29 +15,29 @@ function Home() {
                 else
                     ref.current.counter = 0;
                 if (ref.current.counter === 6)
-                    window.location = "http://www.google.com/";
+                    window.location = "/#";
             });
             return () => {
-                window.removeEventListener('keydown');
+                window.removeEventListener('keydown', function () {
+
+                });
             }
         },
         []
     );
     return (
         <main>
-            <div>
-                <div className="center">
-                    <div className="title">
-                        MiRuMo's Webside
+            <div className="center">
+                <div className="title">
+                    MiRuMo's Webside
                     </div>
-                    <div className="link_list">
-                        <Link to="/" className="link">About Me</Link>
-                        <Link to="/" className="link">Post</Link>
-                        <Link to="/" className="link">My Works</Link>
-                        <Link to="/" className="link">Q&A</Link>
-                    </div>
-                    <img id="mirumo" src={profile} alt="commercial" />
+                <div className="link_list">
+                    <Link to="/me" className="link">About Me</Link>
+                    <Link to="/" className="link">Post</Link>
+                    <Link to="/" className="link">My Works</Link>
+                    <Link to="/" className="link">Q&A</Link>
                 </div>
+                <img id="mirumo" src={profile} alt="commercial" />
             </div>
         </main>
     );
