@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  height: 120vh;
   width: 100vw;
   background: $background-normal;
   font-family: $font-stack;
@@ -15,7 +15,9 @@ body {
     width: inherit;
   }
 }
-
 code {
   font-family: $font-code-stack;
+}
+a {
+  @extend %Link_style;
 }

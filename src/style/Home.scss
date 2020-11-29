@@ -1,16 +1,9 @@
-@import './value.scss';
-
-a {
-    @extend %Link_style;
-}
-
-main {
+nav {
     position: relative;
     width: 100vw;
     height: 100vh;
     .center {
         position: absolute;
-        border: 2px black solid;
         width: 400px;
 	    height: 500px;
 	    margin: auto;
@@ -41,6 +34,14 @@ main {
                     content: " -";
                 }
             }
+        }
+    }
+}
+
+@media screen and (min-width: 500px) {
+    nav {
+        .center {
+        border: 2px black solid;
         }
     }
 }

@@ -1,0 +1,47 @@
+#aboutme {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border: 2px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 24px;
+    position: absolute;
+    top:0;bottom:0;right:0;left:0;
+    .introd {
+        h2 {
+            font-size: 36px;
+        }
+        ul {
+            font-size: 24px;
+            line-height: 36px;
+            li {
+                margin: 0 0 0 24px;
+            }
+        }
+    }
+    .contact-me {
+        font-family: monospace;
+        display: flex;
+        flex-direction: column;
+        white-space: pre;
+        h3 {
+            font-size: 24px;
+        }
+        span {
+            font-size: 14px;
+        }
+    }
+    img {
+        float: right;
+        position: relative;
+        bottom: 150px;
+        width: 200px;
+        height: 200px;
+        &:after {
+            content: "";
+            clear: right;
+        }
+    }
+}

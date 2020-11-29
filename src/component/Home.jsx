@@ -26,7 +26,7 @@ function Home() {
         []
     );
     return (
-        <main>
+        <nav>
             <div className="center">
                 <div className="title">
                     MiRuMo's Webside
@@ -39,7 +39,7 @@ function Home() {
                 </div>
                 <img id="mirumo" src={profile} alt="commercial" />
             </div>
-        </main>
+        </nav>
     );
 }
 
