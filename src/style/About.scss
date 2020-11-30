@@ -32,9 +32,16 @@ $limit_width: 750px;
                 font-size: 24px;
                 margin: 15px 0;
             }
-            span,a {
+            a {
                 font-size: 14px;
                 margin: 5px 0;
+                display: inline;
+            }
+            span {
+                font-size: 14px;
+                margin: 5px 0;
+                cursor: default;
+                display: inline;
             }
         }
         img {
