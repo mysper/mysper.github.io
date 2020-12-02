@@ -15,7 +15,7 @@ function Home() {
                 else
                     ref.current.counter = 0;
                 if (ref.current.counter === 6)
-                    window.location = "/#";
+                    window.location = "/private";
             });
             return () => {
                 window.removeEventListener('keydown', function () {
@@ -33,8 +33,8 @@ function Home() {
                     </div>
                 <div className="link_list">
                     <Link to="/me" className="link">About Me</Link>
-                    <Link to="/" className="link">Post</Link>
-                    <Link to="/" className="link">My Works</Link>
+                    <Link to="/post" className="link">Post</Link>
+                    <Link to="/work" className="link">My Works</Link>
                 </div>
                 <img id="mirumo" src={profile} alt="commercial" />
             </div>
