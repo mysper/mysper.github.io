@@ -1,0 +1,103 @@
+$limit_width: 750px;
+
+@media screen and (min-width: $limit_width) {
+    #aboutme {
+        width: 750px;
+        height: 500px;
+        margin: auto;
+        padding-left: 24px;
+        position: absolute;
+        top:0;bottom:0;right:0;left:0;
+        border: 2px black solid;
+        .introd {
+            width: 50%;
+            h2 {
+                font-size: 36px;
+            }
+            ul {
+                font-size: 24px;
+                line-height: 36px;
+                li {
+                    margin: 0 0 0 24px;
+                }
+            }
+        }
+        .contact-me {
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            white-space: pre;
+            width: 50%;
+            h3 {
+                font-size: 24px;
+                margin: 15px 0;
+            }
+            a {
+                font-size: 14px;
+                margin: 5px 0;
+                display: inline;
+            }
+            span {
+                font-size: 14px;
+                margin: 5px 0;
+                cursor: default;
+                display: inline;
+            }
+        }
+        img {
+            float: right;
+            position: relative;
+            bottom: 400px;
+            width: 400px;
+            height: 400px;
+            &:after {
+                content: "";
+                clear: right;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $limit_width) {
+    #aboutme {
+        width: 500px;
+        margin: auto;
+        display: grid;
+        grid-template-rows: 300px 300px 400px;
+        grid-template-areas: "introd" "gravatar" "contact";
+        padding-left: 24px;
+        .introd {
+            grid-area: introd;
+            h2 {
+                font-size: 36px;
+            }
+            ul {
+                font-size: 24px;
+                line-height: 36px;
+                li {
+                    margin: 0 0 0 24px;
+                }
+            }
+        }
+        .contact-me {
+            grid-area: contact;
+            font-family: monospace;
+            display: flex;
+            flex-direction: column;
+            white-space: pre;
+            h3 {
+                font-size: 24px;
+                margin: 15px 0;
+            }
+            span,a {
+                font-size: 14px;
+                margin: 5px 0;
+            }
+        }
+        img {
+            grid-area: gravatar;
+            width: 300px;
+            height: 300px;
+        }
+    }
+}
