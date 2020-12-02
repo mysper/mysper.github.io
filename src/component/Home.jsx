@@ -35,7 +35,6 @@ function Home() {
                     <Link to="/me" className="link">About Me</Link>
                     <Link to="/" className="link">Post</Link>
                     <Link to="/" className="link">My Works</Link>
-                    <Link to="/" className="link">Q&A</Link>
                 </div>
                 <img id="mirumo" src={profile} alt="commercial" />
             </div>
