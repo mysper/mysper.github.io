@@ -1,0 +1,43 @@
+#post {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        margin: 25px 0;
+        text-align: center;
+    }
+}
+.postList {
+    //border: 2px black solid;
+    margin:25px auto;
+    overflow-y: auto;
+}
+@media screen and (min-width: 550px) {
+    .postList {
+        border: 2px black solid;
+        width: 400px;
+        height: 525px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .postList {
+        border-top: 2px black solid;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #999;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}

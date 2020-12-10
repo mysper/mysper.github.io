@@ -13,7 +13,7 @@ function About() {
                     <li>NPTU</li>
                 </ul>
             </div>
-            <div class="contact-me">
+            <div className="contact-me">
                 <h3>Contact Me</h3>
                 <span>Gmail:&#9;&#9;&#9;&#9;&#9;anthony.a3203@gmail.com</span>
                 <span>Telegram:&#9;&#9;<a href="https://t.me/@Mirumodapon">@Mirumodapon</a></span>
