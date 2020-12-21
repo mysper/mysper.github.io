@@ -4,28 +4,17 @@ nav {
     height: 100vh;
     .center {
         position: absolute;
-        width: 400px;
-        height: 500px;
         margin: auto;
         top:0;
         right:0;
-        bottom:5%;
         left:0;
     }
-    .title {
-        text-align: center;
-        margin: 35px auto 30px;
-        font-size: 24px;
-        font-weight: bold;
-    }
     .link_list {
-        font-size: 18px;
         display: flex;
         flex-direction: column;
         font-family: monospace;
         .link {
             text-align: center;
-            margin: 18px auto;
             &:hover {
                 &:before {
                     content: "- ";
@@ -38,10 +27,53 @@ nav {
     }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
     nav {
         .center {
-        border: 2px black solid;
+            border: 2px black solid;
+            width: 400px;
+            height: 500px;
+            bottom:5%;
+        }
+        .title {
+            text-align: center;
+            margin: 0px auto 30px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .link_list {
+            font-size: 18px;
+            .link {
+                margin: 18px auto;
+            }
+        }
+        
+    }
+}
+@media screen and (max-width: 600px) {
+    nav {
+        .center {
+            width: inherit;
+            height: inherit;
+            bottom:0;
+        }
+        .title {
+            text-align: center;
+            margin: 35px auto 30px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .link_list {
+            font-size: 32px;
+            .link {
+                margin: 32px auto;
+            }
+        }
+        #mirumo {
+            transform: scale(1.3);
+            position: fixed;
+            bottom: 0;
+            left: 0;
         }
     }
 }

@@ -1,6 +1,9 @@
 function Work() {
     return (
-        <h1>Work</h1>
+        <div style={{ position: 'absolute', top: 0, bottom: 0 }}>
+            <h1>Work Page</h1>
+            <h2>Coming Soon</h2>
+        </div>
     )
 }
 

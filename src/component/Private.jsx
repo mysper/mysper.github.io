@@ -1,6 +1,9 @@
 function Private() {
     return (
-        <h1>Control</h1>
+        <div style={{ position: 'absolute', top: 0, bottom: 0 }}>
+            <h1>Control Page</h1>
+            <h2>Coming Soon</h2>
+        </div>
     )
 }
 
