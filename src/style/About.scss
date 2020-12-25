@@ -1,6 +1,8 @@
-$limit_width: 750px;
+#aboutme {
+    font-family: monospace;
+}
 
-@media screen and (min-width: $limit_width) {
+@media screen and (min-width: 750px) {
     #aboutme {
         width: 750px;
         height: 500px;
@@ -10,7 +12,7 @@ $limit_width: 750px;
         top:0;bottom:0;right:0;left:0;
         border: 2px black solid;
         .introd {
-            width: 50%;
+            width: 75%;
             h2 {
                 font-size: 36px;
             }
@@ -23,7 +25,6 @@ $limit_width: 750px;
             }
         }
         .contact-me {
-            font-family: monospace;
             display: flex;
             flex-direction: column;
             white-space: pre;
@@ -48,8 +49,8 @@ $limit_width: 750px;
             float: right;
             position: relative;
             bottom: 400px;
-            width: 400px;
-            height: 400px;
+            width: 350px;
+            height: 350px;
             &:after {
                 content: "";
                 clear: right;
@@ -58,46 +59,77 @@ $limit_width: 750px;
     }
 }
 
-@media screen and (max-width: $limit_width) {
+@media screen and (max-width: 750px) {
     #aboutme {
-        width: 500px;
-        margin: auto;
+        width: 100vw;
+        height: 100vh;
+        padding-left: 15vw;
+        padding-top: 20px;
         display: grid;
-        grid-template-rows: 300px 300px 400px;
-        grid-template-areas: "introd" "gravatar" "contact";
-        padding-left: 24px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto 1fr;
         .introd {
-            grid-area: introd;
-            h2 {
-                font-size: 36px;
-            }
-            ul {
-                font-size: 24px;
-                line-height: 36px;
-                li {
-                    margin: 0 0 0 24px;
-                }
-            }
-        }
-        .contact-me {
-            grid-area: contact;
-            font-family: monospace;
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
             display: flex;
             flex-direction: column;
-            white-space: pre;
-            h3 {
-                font-size: 24px;
-                margin: 15px 0;
-            }
-            span,a {
-                font-size: 14px;
-                margin: 5px 0;
-            }
+            justify-content: center;
+            font-size: 20px;
+        }
+        .contact-me {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 16px;
         }
         img {
-            grid-area: gravatar;
-            width: 300px;
-            height: 300px;
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    #aboutme {
+        width: 100vw;
+        height: 100vh;
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto 1fr;
+        .introd {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .contact-me {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 16px;
+        }
+        img {
+            width: 70vw;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 3;
         }
     }
 }
