@@ -1,11 +1,12 @@
 import React from 'react';
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import '../style/Home.scss';
 import profile from '../image/profile.ico';
 
 function Home() {
     const ref = useRef({ counter: 0 });
+    let history = useHistory();
     useEffect(
         () => {
             window.addEventListener('keydown', function (e) {
@@ -15,7 +16,7 @@ function Home() {
                 else
                     ref.current.counter = 0;
                 if (ref.current.counter === 6)
-                    window.location = "/private";
+                    history.push("/private");
             });
             return () => {
                 window.removeEventListener('keydown', function () {
@@ -23,7 +24,7 @@ function Home() {
                 });
             }
         },
-        []
+        [history]
     );
     return (
         <nav>
@@ -32,9 +33,9 @@ function Home() {
                     MiRuMo's Webside
                     </div>
                 <div className="link_list">
-                    <Link to="/me" className="link">About Me</Link>
-                    <Link to="/post" className="link">Post</Link>
-                    <Link to="/work" className="link">My Works</Link>
+                    <div onClick={() => history.push('/me')} className="link">About Me</div>
+                    <div onClick={() => history.push('/post')} className="link">Post</div>
+                    <div onClick={() => history.push('/work')} className="link">My Works</div>
                 </div>
                 <img id="mirumo" src={profile} alt="commercial" />
             </div>
