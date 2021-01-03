@@ -3,25 +3,6 @@ import '../style/Home.scss';
 import profile from '../image/profile.ico';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        window.addEventListener('keydown', this.keyEvent);
-    }
-    keyEvent(e) {
-        let str = "mysper";
-        if (e.key === str[this.counter])
-            ++this.counter;
-        else
-            this.counter = 0;
-        if (this.counter === 6) {
-            this.props.history.push("/private");
-        }
-    }
-    componentWillUnmount() {
-        window.removeEventListener('keydown', this.keyEvent);
-        this.counter = 0;
-    }
-    counter = 0;
     render() {
         return (
             <nav>
