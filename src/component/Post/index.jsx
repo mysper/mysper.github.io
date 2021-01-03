@@ -5,7 +5,7 @@ class Post extends Component {
     constructor(props) {
         super(props);
         this.state = { response: null };
-        axios.get('https://mysper-gh-pages.herokuapp.com/post/get/list').then(
+        axios.get('https://mysper-gh-pages.herokuapp.com/post/list').then(
             response => {
                 this.setState({ response: response.data });
                 props.dispatch({
