@@ -32,6 +32,18 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: npm install
+        run: |
+          npm install
+          npm run build
       - name: Deploy to gh page
-        run: npm run deploy
+        run: |
+          cd ./build
+          git init
+          git config --local user.name $USER_NAME
+          git config --local user.email $USER_EMAIL
+          git status
+          git remote add origin https://$MY_SECRET@github.com/$GITHUB_REPOSITORY.git
+          git checkout -b gh-pages
+          git add *
+          git commit -m "deploy to Github pages--github action"
+          git push origin gh-pages -f
