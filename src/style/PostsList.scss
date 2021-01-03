@@ -1,0 +1,41 @@
+.postslist {
+    width: inherit;
+    padding-top: 35px;
+    .list {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        .list_item {
+            position: relative;
+            width: inherit;
+            border-bottom: 2px solid black;
+            margin: 15px auto;
+            cursor: pointer;
+            &:hover {
+                color: red;
+            }
+            .title {
+                display: block;
+                font-size: 24px;
+                margin: 5px 10px;
+                font-weight: bold;
+            }
+            .comment_data {
+                font-size: 12px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 450px) {
+    .comment_data {
+        position: absolute;
+        right: 5px;
+        bottom: 3px;
+    }
+}
+.loading {
+    background: red;
+    width: 100px;
+    height: 100px;
+}

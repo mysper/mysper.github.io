@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from "react-redux";
+import '../../style/Post.scss';
+
+import PostsList from './PostsList';
 class Post extends Component {
     constructor(props) {
         super(props);
@@ -20,22 +23,24 @@ class Post extends Component {
 
     render() {
         return (
-            <div style={{ position: 'absolute', top: 0, bottom: 0 }}>
-                <h1>Post Page</h1>
-                <h2>Coming Soon</h2>
-                <h2>building api</h2>
-                {(this.props.post.data) ?
-                    Object.keys(this.props.post.data).map((key) =>
-                        <p key={key} style={{ fontSize: '24px' }}>{this.props.post.data[key].title}<sub style={{ fontSize: '12px' }}>{this.props.post.data[key].data}</sub></p>
-                    ) : 'null'
-                }
+            <div className="Posts">
+                <h1>Post</h1>
+                <PostsList></PostsList>
             </div>
         );
     }
 }
-
+// }
+// <h1>Post Page</h1>
+//                 <h2>Coming Soon</h2>
+//                 <h2>building api</h2>
+// {
+//     (this.props.post.data) ?
+//     Object.keys(this.props.post.data).map((key) =>
+//         <p key={key} style={{ fontSize: '24px' }}>{this.props.post.data[key].title}<sub style={{ fontSize: '12px' }}>{this.props.post.data[key].data}</sub></p>
+//     ) : 'null'
+// }
 const mapStateToProps = (state) => ({
-    post: state.post,
 });
 
 export default connect(mapStateToProps)(Post);
