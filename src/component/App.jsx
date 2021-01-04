@@ -21,7 +21,7 @@ class App extends Component {
             <AnimateSwitch during={1000}>
               <Route path="/" component={Home} exact></Route>
               <Route path="/me" component={About} exact></Route>
-              <Route path="/post" component={Post} exact></Route>
+              <Route path="/post" component={Post}></Route>
               <Route path="/work" component={Work} exact></Route>
               <Route path="/private" component={Private} exact></Route>
             </AnimateSwitch>

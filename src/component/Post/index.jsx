@@ -4,6 +4,10 @@ import { connect } from "react-redux";
 import '../../style/Post.scss';
 
 import PostsList from './PostsList';
+import AnimateSwitch from '../AnimateSwitch';
+import { Route } from 'react-router-dom';
+import PostContent from './PostContent';
+
 class Post extends Component {
     constructor(props) {
         super(props);
@@ -24,22 +28,18 @@ class Post extends Component {
     render() {
         return (
             <div className="Posts">
-                <h1>Post</h1>
-                <PostsList></PostsList>
-            </div>
+                <AnimateSwitch>
+                    <Route path={`${this.props.match.url}`} exact>
+                        <h1>Post</h1>
+                        <PostsList></PostsList>
+                    </Route>
+                    <Route path={`${this.props.match.url}/:id`} component={PostContent} />
+                </AnimateSwitch>
+            </div >
         );
     }
 }
-// }
-// <h1>Post Page</h1>
-//                 <h2>Coming Soon</h2>
-//                 <h2>building api</h2>
-// {
-//     (this.props.post.data) ?
-//     Object.keys(this.props.post.data).map((key) =>
-//         <p key={key} style={{ fontSize: '24px' }}>{this.props.post.data[key].title}<sub style={{ fontSize: '12px' }}>{this.props.post.data[key].data}</sub></p>
-//     ) : 'null'
-// }
+
 const mapStateToProps = (state) => ({
 });
 
