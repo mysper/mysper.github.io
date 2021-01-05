@@ -7,7 +7,6 @@ class PostList extends Component {
         return Object.keys(list).map(
             index => {
                 let D = new Date(list[index].date);
-                console.log(D.getMonth());
                 return (
                     <Link to={`/post/${list[index]._id}`} className="list_item" key={list[index]._id}>
                         <span className="title">{list[index].title}</span>
@@ -35,7 +34,7 @@ class PostList extends Component {
 
 function mapStateToProp(state) {
     return {
-        list: state.post.data
+        list: state.post.list
     }
 }
 

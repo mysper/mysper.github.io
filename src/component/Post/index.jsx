@@ -14,15 +14,12 @@ class Post extends Component {
         this.state = { response: null };
         axios.get('https://mysper-gh-pages.herokuapp.com/post/list').then(
             response => {
-                this.setState({ response: response.data });
                 props.dispatch({
                     type: 'update_post',
                     payload: [...response.data]
                 });
-                console.log(this.state);
             }
         );
-        console.log(props);
     }
 
     render() {
@@ -30,7 +27,7 @@ class Post extends Component {
             <div className="Posts">
                 <AnimateSwitch>
                     <Route path={`${this.props.match.url}`} exact>
-                        <h1>Post</h1>
+                        <h1 className="post">Post</h1>
                         <PostsList></PostsList>
                     </Route>
                     <Route path={`${this.props.match.url}/:id`} component={PostContent} />
@@ -41,6 +38,7 @@ class Post extends Component {
 }
 
 const mapStateToProps = (state) => ({
+    state
 });
 
 export default connect(mapStateToProps)(Post);

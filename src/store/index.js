@@ -5,7 +5,8 @@ import post from './reducer/post';
 
 const initialState = {
     post: {
-        data: null
+        list: null,
+        data: {}
     }
 };
 
