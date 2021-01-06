@@ -10,7 +10,8 @@ class PostContent extends Component {
         axios.get(`https://mysper-gh-pages.herokuapp.com/post/${props.match.params.id}`).then(
             response => {
                 if (response.data.type === "link") {
-                    window.location.href = response.data.content;
+                    window.location.href = '/post';
+                    window.open(response.data.content);
                     return;
                 }
                 console.log(response);
