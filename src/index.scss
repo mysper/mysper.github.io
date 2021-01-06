@@ -24,3 +24,18 @@ code {
 a {
   @extend %Link_style;
 }
+.loading {
+    width: 50px;
+    height: 50px;
+    border-top: 10px solid #ADADAD;
+    border-right: 10px solid #7B7B7B;
+    border-left: 10px solid #7B7B7B;
+    border-bottom: 10px solid #7B7B7B;
+    border-radius: 50%;
+    animation-name: oxxo;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+    animation-delay: .3s;
+    animation-iteration-count: infinite;
+    margin:auto;
+}

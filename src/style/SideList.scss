@@ -1,0 +1,78 @@
+#sideList {
+   position: fixed;
+   width: 300px;
+   height: 100vh;
+   left: 0;
+   top: 0;
+   display: flex;
+   flex-direction: column;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   .loadingBlock {
+       width: inherit;
+       height: inherit;
+       display: flex;
+       align-content: center;
+   }
+   .sideitem {
+       border-bottom: 2px solid black;
+       width: inherit;
+       height: 65px;
+       font-size: 24px;
+       position: relative;
+       cursor: pointer;
+       .title {
+           height: inherit;
+           margin-left: 15px;
+           display: flex;
+           flex-direction: column;
+           justify-content: center; 
+       }
+       .title:hover {
+           color: red;
+       }
+       .del {
+           width: 30px;
+           height: 30px;
+           position: absolute;
+           top: 0;bottom:0;
+           margin: auto;
+           right: 20px;
+           display: flex;
+           justify-content: center;
+           cursor: pointer;
+           &:before {
+               content: 'X';
+           }
+           &:hover:before {
+               color: red;
+           }
+       }
+       
+    }
+}
+#View {
+    position: fixed;
+    width: calc(100vw - 300px);
+    height: 100vh;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    .top {
+        background:red;
+        height: 75px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            height: 35px;
+            margin: 10px;
+        }
+        
+    }
+    .bottom {
+        background: blue;
+        height: calc(100vh - 75px);
+    }
+}

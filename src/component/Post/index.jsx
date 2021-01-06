@@ -11,7 +11,6 @@ import PostContent from './PostContent';
 class Post extends Component {
     constructor(props) {
         super(props);
-        this.state = { response: null };
         axios.get('https://mysper-gh-pages.herokuapp.com/post/list').then(
             response => {
                 props.dispatch({
