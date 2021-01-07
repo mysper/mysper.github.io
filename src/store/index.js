@@ -2,7 +2,7 @@ import { createStore, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import post from './reducer/post';
-
+import password from './reducer/password';
 const initialState = {
     post: {
         list: null,
@@ -11,11 +11,12 @@ const initialState = {
             content: "",
             title: ""
         }
-    }
+    },
+    password: ""
 };
 
 const store = createStore(
-    combineReducers({ post }),
+    combineReducers({ post, password }),
     initialState,
     composeWithDevTools()
 );

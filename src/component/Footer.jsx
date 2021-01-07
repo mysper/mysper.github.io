@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import '../style/Footer.scss';
 
 class Footer extends Component {
     goPrivate = (e) => {
         const msg = prompt("Do u know what r u doing?(Y/N)");
-        if (msg === "mysper") window.location.href = '/private';
-        else alert('u have been block');
+        this.props.dispatch({ type: 'enter', pd: msg })
     }
     render() {
         return (
@@ -14,4 +14,8 @@ class Footer extends Component {
     }
 }
 
-export default Footer;
+function mapStateToProps(state) {
+    return {};
+}
+
+export default connect(mapStateToProps)(Footer);

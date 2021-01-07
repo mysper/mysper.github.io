@@ -31,15 +31,15 @@ class SideList extends Component {
         );
     }
     delpost = (id) => {
-        const password = prompt("plz enter the password");
+        const password = this.props.password;
         axios.delete(
             `https://mysper-gh-pages.herokuapp.com/post/post/${id}`,
-            { password },
             {
                 headers: {
                     "Access-Control-Allow-Origin": "*",
                     "Content-Type": "application/json"
-                }
+                },
+                data: { password }
             }
         ).then(
             res => {
@@ -62,7 +62,7 @@ class SideList extends Component {
         this.setState({ view: false });
     }
     handlePost = () => {
-        const password = prompt("plz enter the password");
+        const password = this.props.password;
         const body = {
             title: this.props.newPost.title,
             content: this.props.newPost.content,
@@ -86,7 +86,7 @@ class SideList extends Component {
         )
     }
     handleLink = () => {
-        const password = prompt("plz enter the password");
+        const password = this.props.password;
         const body = {
             title: this.props.newPost.title,
             content: this.props.newPost.content,
@@ -138,7 +138,8 @@ class SideList extends Component {
 function mapStateToProps(state) {
     return {
         list: state.post.list,
-        newPost: state.post.newPost
+        newPost: state.post.newPost,
+        password: state.password
     }
 }
 
