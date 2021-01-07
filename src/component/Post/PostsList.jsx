@@ -8,7 +8,14 @@ class PostList extends Component {
             index => {
                 let D = new Date(list[index].date);
                 return (
-                    <Link to={`/post/${list[index]._id}`} className="list_item" key={list[index]._id}>
+                    <Link
+                        className="list_item"
+                        key={list[index]._id}
+                        onClick={() => {
+                            if (list[index].type) window.location.href = list[index].ref;
+                            else this.props.history.push(`/post/${list[index]._id}`);
+                        }}
+                    >
                         <span className="title">{list[index].title}</span>
                         <div className="comment_date">
                             <span className="comment">{list[index].commentSize} {`comment${(list[index].commentSize > 1) ? 's' : ''}`}</span>

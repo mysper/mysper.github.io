@@ -9,11 +9,6 @@ class PostContent extends Component {
         this.state = { content: "# Hello" }
         axios.get(`https://mysper-gh-pages.herokuapp.com/post/${props.match.params.id}`).then(
             response => {
-                if (response.data.type === "link") {
-                    window.location.href = '/post';
-                    window.open(response.data.content);
-                    return;
-                }
                 console.log(response);
                 let content = {};
                 content[this.props.match.params.id] = response.data;
