@@ -31,16 +31,24 @@ class SideList extends Component {
         );
     }
     delpost = (id) => {
+        const password = prompt("plz enter the password");
         axios.delete(
             `https://mysper-gh-pages.herokuapp.com/post/post/${id}`,
+            { password },
             {
                 headers: {
-                    "Access-Control-Allow-Origin": "*"
+                    "Access-Control-Allow-Origin": "*",
+                    "Content-Type": "application/json"
                 }
             }
         ).then(
             res => {
-                this.props.dispatch({ type: "delete_post", payload: this.props.list.filter(item => item._id !== id) });
+                if (res.status === 200) {
+                    alert('the post is deleted');
+                    this.props.dispatch({ type: "delete_post", payload: this.props.list.filter(item => item._id !== id) });
+                }
+                else alert('the post is deleted failed');
+
             }
         )
     }
@@ -70,7 +78,10 @@ class SideList extends Component {
             }
         ).then(
             response => {
-                console.log(response);
+                if (response.status === 200) {
+                    alert('the post is sent');
+                    this.props.dispatch({ type: "update_post", payload: [response.data, ...this.props.list] });
+                } else alert('the post is snet failed');
             }
         )
     }
@@ -91,7 +102,10 @@ class SideList extends Component {
             }
         ).then(
             response => {
-                console.log(response);
+                if (response.status === 200) {
+                    alert('the post is sent');
+                    this.props.dispatch({ type: "update_post", payload: [response.data, ...this.props.list] });
+                } else alert('the post is snet failed');
             }
         )
     }
