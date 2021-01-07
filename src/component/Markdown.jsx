@@ -8,10 +8,12 @@ import html from 'remark-html';
 import link from 'remark-reference-links';
 import footnotes from 'remark-footnotes';
 
+import '../style/markdown.scss';
+
 class Markdown extends Component {
     render() {
         return (
-            <div id="preview">
+            <div id="markdown">
                 {
                     unified()
                         .use(parse)
