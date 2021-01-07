@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import '../../style/SideList.scss';
 import Viewpost from './View-post';
+import New from './new';
 class SideList extends Component {
     constructor(props) {
         super(props);
@@ -48,25 +49,51 @@ class SideList extends Component {
         console.log(post);
         this.setState({ view: true, post: post });
     }
-    view = () => {
-        return (
-            <Viewpost post={this.state.post}></Viewpost>
-        );
-    }
-    new = () => {
-        return (
-            <h1>new</h1>
-        );
-    }
     newPost = () => {
         console.log('new post');
         this.setState({ view: false });
     }
-    showPost = () => {
-        console.log('show post');
+    handlePost = () => {
+        const password = prompt("plz enter the password");
+        const body = {
+            title: this.props.newPost.title,
+            content: this.props.newPost.content,
+            type: "text",
+            password
+        };
+        console.log(body);
+        axios.post(
+            "https://mysper-gh-pages.herokuapp.com/post/new",
+            body,
+            {
+                headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+            }
+        ).then(
+            response => {
+                console.log(response);
+            }
+        )
     }
-    showComment = () => {
-        console.log('show comment');
+    handleLink = () => {
+        const password = prompt("plz enter the password");
+        const body = {
+            title: this.props.newPost.title,
+            content: this.props.newPost.content,
+            type: "link",
+            password
+        };
+        console.log(body);
+        axios.post(
+            "https://mysper-gh-pages.herokuapp.com/post/new",
+            body,
+            {
+                headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+            }
+        ).then(
+            response => {
+                console.log(response);
+            }
+        )
     }
     render() {
         const { list } = this.props;
@@ -79,15 +106,13 @@ class SideList extends Component {
                 </div>
                 <div id="View">
                     <div className="top">
-                        <div>
-                            <button onClick={this.showPost}>post</button>
-                            <button onClick={this.showComment}>comment</button>
-                        </div>
                         <button className="newPostButton" onClick={this.newPost}>New</button>
+                        <button onClick={this.handlePost}>post</button>
+                        <button onClick={this.handleLink}>link</button>
                     </div>
                     <div className="bottom">
                         {
-                            (this.state.view) ? this.view() : this.new()
+                            (this.state.view) ? <Viewpost post={this.state.post}></Viewpost> : <New></New>
                         }
                     </div>
                 </div>
@@ -98,7 +123,8 @@ class SideList extends Component {
 
 function mapStateToProps(state) {
     return {
-        list: state.post.list
+        list: state.post.list,
+        newPost: state.post.newPost
     }
 }
 

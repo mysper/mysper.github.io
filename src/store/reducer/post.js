@@ -1,6 +1,7 @@
 export const UPDATE_POST = 'update_post';
 export const UPDATE_CONTENT = 'update_content';
 export const DELETE_POST = 'delete_post';
+export const NEW_POST = "new_post";
 
 export default function (state = {}, action) {
     switch (action.type) {
@@ -12,6 +13,9 @@ export default function (state = {}, action) {
         }
         case DELETE_POST: {
             return { ...state, list: action.payload }
+        }
+        case NEW_POST: {
+            return { ...state, newPost: { title: action.title, content: action.content } }
         }
         default:
             return state;

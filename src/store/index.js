@@ -6,7 +6,11 @@ import post from './reducer/post';
 const initialState = {
     post: {
         list: null,
-        data: {}
+        data: {},
+        newPost: {
+            content: "",
+            title: ""
+        }
     }
 };
 

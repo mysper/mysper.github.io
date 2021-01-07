@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import axios from 'axios';
-import Markdwon from '../Markdown';
+import Markdown from '../Markdown';
 import '../../style/PostContent.scss';
 class PostContent extends Component {
     constructor(props) {
@@ -26,7 +26,7 @@ class PostContent extends Component {
         return (
             <div className="post">
                 {
-                    (Object.keys(this.props.content).indexOf(this.props.match.params.id) !== -1) ? <Markdwon content={this.props.content[this.props.match.params.id].content} /> : <div className="loading"></div>
+                    (Object.keys(this.props.content).indexOf(this.props.match.params.id) !== -1) ? <Markdown content={this.props.content[this.props.match.params.id].content} /> : <div className="loading"></div>
                 }
             </div>
         );
