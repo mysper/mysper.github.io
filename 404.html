@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        (function (l) {
+            const arr = l.href.split('/')
+            const params = arr.filter((x, i) => i > arr.indexOf('mysper.github.io')).toString().replace(',', '/');
+            const url = `https://mysper.github.io?p=${params}`;
+            window.location.href = url;
+        }(window.location))
+    </script>>
+</head>
+
+<body>
+
+</body>
+
+</html>
