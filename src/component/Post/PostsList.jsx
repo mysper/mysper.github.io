@@ -13,7 +13,7 @@ class PostList extends Component {
                         key={list[index]._id}
                         onClick={() => {
                             if (list[index].type === 'link') window.location.href = list[index].ref;
-                            else window.location.href = `/post/${list[index]._id}`;
+                            else this.props.history.push(`/post/${list[index]._id}`);
                         }}
                     >
                         <span className="title">{list[index].title}</span>

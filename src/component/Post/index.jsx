@@ -27,7 +27,7 @@ class Post extends Component {
                 <AnimateSwitch>
                     <Route path={`${this.props.match.url}`} exact>
                         <h1 className="post">Post</h1>
-                        <PostsList></PostsList>
+                        <PostsList history={this.props.history}></PostsList>
                     </Route>
                     <Route path={`${this.props.match.url}/:id`} component={PostContent} />
                 </AnimateSwitch>
